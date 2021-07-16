@@ -47,4 +47,4 @@ const generateHotel = () => ({
 
 const similarHotels = new Array(SIMILAR_HOTELS_COUNT).fill(null).map(() => generateHotel());
 
-console.log(similarHotels);
+/*console.log(similarHotels);*/
