@@ -1,4 +1,4 @@
-import {AVATARS, TYPES, CHECKINS, CHECKOUTS, FEATURES, PHOTOS, SIMILAR_HOTELS_COUNT} from './data.js'
+import {AVATARS, TYPES, CHECKINS, CHECKOUTS, FEATURES, PHOTOS, SIMILAR_HOTELS_COUNT} from './data.js';
 
 function getRandInt(minNumber, maxNumber) {
   if(minNumber > maxNumber || maxNumber === minNumber || minNumber < 0 || maxNumber < 0) {
