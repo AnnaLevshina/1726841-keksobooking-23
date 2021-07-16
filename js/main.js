@@ -84,7 +84,7 @@ const generateOffer = () => ({
 
 const generateLocations = () => ({
   lat: getRandFloat(35.65000, 35.70000, 5),
-  lng: getRandFloat(139.70000, 139.80000),
+  lng: getRandFloat(139.70000, 139.80000, 5),
 });
 
 const generateHotel = () => ({
