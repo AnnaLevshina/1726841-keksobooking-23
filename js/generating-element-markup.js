@@ -1,7 +1,7 @@
 import {similarHotels} from './util.js';
 
-const userCard = document.querySelector('#card').content;
-const userDialog = userCard.querySelector('.popup');
+/*const userCard = document.querySelector('#card').content;
+const userDialog = userCard.querySelector('.popup');*/
 
 /*const similarTitleElement = userDialog.querySelector('.popup__title');
 const similarAddressElement = userDialog.querySelector('.popup__text--address');
@@ -76,4 +76,4 @@ const renderCard = (hotel) => {
   return element;
 };
 
-const getCard = document.querySelector('#map-canvas').appendChild(renderCard(similarHotel[0]));
+const card = document.querySelector('#map-canvas').appendChild(renderCard(similarHotel[0]));
