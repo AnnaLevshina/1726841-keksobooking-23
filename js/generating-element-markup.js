@@ -3,7 +3,7 @@ import {similarHotels} from './util.js';
 const userCard = document.querySelector('#card').content;
 const userDialog = userCard.querySelector('.popup');
 
-const similarTitleElement = userDialog.querySelector('.popup__title');
+/*const similarTitleElement = userDialog.querySelector('.popup__title');
 const similarAddressElement = userDialog.querySelector('.popup__text--address');
 const similarPriceElement = userDialog.querySelector('.popup__text--price');
 const similarTypeElement = userDialog.querySelector('.popup__type');
@@ -11,7 +11,7 @@ const similarCapacityElement = userDialog.querySelector('.popup__text--capacity'
 const similarTimeElement = userDialog.querySelector('.popup__text--time');
 
 const similarFeaturesElement = userDialog.querySelector('.popup__features');
-
+*/
 const TYPES_DICTIONARY = {
   flat: 'Квартира',
   bungalow: 'Бунгало',
