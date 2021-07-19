@@ -27,11 +27,11 @@ const generateOffer = () => ({
   type: getRandomArrayElement(TYPES),
   rooms: getRandInt(1, 5),
   guests: getRandInt(1, 10),
-  chechin: getRandomArrayElement(CHECKINS),
-  chechout: getRandomArrayElement(CHECKOUTS),
-  features: getRandomArrayElement(FEATURES),
+  checkin: getRandomArrayElement(CHECKINS),
+  checkout: getRandomArrayElement(CHECKOUTS),
+  features: [getRandomArrayElement(FEATURES)],
   description: '',
-  photos: getRandomArrayElement(PHOTOS),
+  photos: PHOTOS,
 });
 
 const generateLocations = () => ({
@@ -48,3 +48,5 @@ const generateHotel = () => ({
 const similarHotels = new Array(SIMILAR_HOTELS_COUNT).fill(null).map(() => generateHotel());
 
 /*console.log(similarHotels);*/
+
+export {similarHotels};
