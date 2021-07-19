@@ -17,8 +17,8 @@ const TYPES_DICTIONARY = {
   bungalow: 'Бунгало',
   house: 'Дом',
   palace: 'Дворец',
-  hotel: 'Отель'
-}
+  hotel: 'Отель',
+};
 
 const similarHotel = similarHotels;
 
@@ -49,9 +49,6 @@ const renderCard = (hotel) => {
       featuresFragment.appendChild(featureElement);
     });
     featureListElement.textContent = '';
-
-    console.log(featureListElement);
-
     featureListElement.appendChild(featuresFragment);
   } else {
     featureListElement.style.display = 'none';
@@ -76,10 +73,7 @@ const renderCard = (hotel) => {
   }
 
   element.querySelector('.popup__avatar').src = hotel.author.avatar;
-
   return element;
-
-
-}
+};
 
 const getCard = document.querySelector('#map-canvas').appendChild(renderCard(similarHotel[0]));
