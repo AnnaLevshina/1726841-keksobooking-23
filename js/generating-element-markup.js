@@ -77,3 +77,4 @@ const renderCard = (hotel) => {
 };
 
 const getCard = document.querySelector('#map-canvas').appendChild(renderCard(similarHotel[0]));
+
