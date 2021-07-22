@@ -17,7 +17,7 @@ const MAX_NAME_LENGTH = 100;
 });*/
 
 userNameInput.addEventListener('input', () => {
- const valueLength = userNameInput.value.length;
+  const valueLength = userNameInput.value.length;
 
   if (valueLength < MIN_NAME_LENGTH) {
     userNameInput.setCustomValidity(`Ещё ${  MIN_NAME_LENGTH - valueLength } симв.`);
@@ -38,7 +38,7 @@ const MIN_PRICE_LENGTH = 0;
 const MAX_PRICE_LENGTH = 7;
 
 userPriceInput.addEventListener('input', () => {
-	const valueLength = userPriceInput.value.length;
+  const valueLength = userPriceInput.value.length;
 
   if (valueLength < MIN_PRICE_LENGTH) {
     userPriceInput.setCustomValidity(`Ещё ${  MIN_PRICE_LENGTH - valueLength } симв.`);
@@ -63,26 +63,26 @@ const MIN_PRICE_PALACE = 10000;
 
 const userSetMinPrice = (type) => {
 
-	if (type === 'bungalow') {
-		userPriceInput.placeholder = MIN_PRICE_BUNGALOW;
-		userPriceInput.min = MIN_PRICE_BUNGALOW;
-	} else if (type === 'flat') {
-  		userPriceInput.placeholder = MIN_PRICE_FLAT;
-		userPriceInput.min = MIN_PRICE_FLAT;
+  if (type === 'bungalow') {
+    userPriceInput.placeholder = MIN_PRICE_BUNGALOW;
+    userPriceInput.min = MIN_PRICE_BUNGALOW;
+  } else if (type === 'flat') {
+    userPriceInput.placeholder = MIN_PRICE_FLAT;
+    userPriceInput.min = MIN_PRICE_FLAT;
   } else if (type === 'hotel') {
-  		userPriceInput.placeholder = MIN_PRICE_HOTEL;
-		userPriceInput.min = MIN_PRICE_HOTEL;
+    userPriceInput.placeholder = MIN_PRICE_HOTEL;
+    userPriceInput.min = MIN_PRICE_HOTEL;
   } else if (type === 'house') {
-  		userPriceInput.placeholder = MIN_PRICE_HOUSE;
-		userPriceInput.min = MIN_PRICE_HOUSE;
+    userPriceInput.placeholder = MIN_PRICE_HOUSE;
+    userPriceInput.min = MIN_PRICE_HOUSE;
   } else if (type === 'palace') {
-  		userPriceInput.placeholder = MIN_PRICE_PALACE;
-		userPriceInput.min = MIN_PRICE_PALACE;
+    userPriceInput.placeholder = MIN_PRICE_PALACE;
+    userPriceInput.min = MIN_PRICE_PALACE;
   }
 };
 
 userSetMinPrice(userTypeInput.value);
 
 userTypeInput.addEventListener('change', (evt) => {
-	userSetMinPrice(evt.target.value)
+  userSetMinPrice(evt.target.value);
 });
