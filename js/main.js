@@ -1,7 +1,7 @@
 import './util.js';
 import './generating-element-markup.js';
 import './inactive-state.js';
-/*import './data.js';*/
+import './user-form.js';
 
 
 /*function getRandInt(minNumber, maxNumber) {
