@@ -1,8 +1,17 @@
 //Заголовок объявления
-const userNameInput = document.querySelector('#title');
-
+const MIN_PRICE_BUNGALOW = 0;
+const MIN_PRICE_FLAT = 1000;
+const MIN_PRICE_HOTEL = 3000;
+const MIN_PRICE_HOUSE = 5000;
+const MIN_PRICE_PALACE = 10000;
 const MIN_NAME_LENGTH = 30;
 const MAX_NAME_LENGTH = 100;
+const MIN_PRICE_LENGTH = 0;
+const MAX_PRICE_LENGTH = 7;
+
+const userNameInput = document.querySelector('#title');
+
+
 
 /*userNameInput.addEventListener('invalid', () => {
 	if  (userNameInput.validity.tooShort) {
@@ -34,9 +43,6 @@ userNameInput.addEventListener('input', () => {
 
 const userPriceInput = document.querySelector('#price');
 
-const MIN_PRICE_LENGTH = 0;
-const MAX_PRICE_LENGTH = 7;
-
 userPriceInput.addEventListener('input', () => {
   const valueLength = userPriceInput.value.length;
 
@@ -54,12 +60,6 @@ userPriceInput.addEventListener('input', () => {
 //Поле "Тип жилья" влияет на минимальное значение поля "Цена на ночь"
 
 const userTypeInput = document.querySelector('#type');
-
-const MIN_PRICE_BUNGALOW = 0;
-const MIN_PRICE_FLAT = 1000;
-const MIN_PRICE_HOTEL = 3000;
-const MIN_PRICE_HOUSE = 5000;
-const MIN_PRICE_PALACE = 10000;
 
 const userSetMinPrice = (type) => {
 
