@@ -57,5 +57,4 @@ function activateForm() {
 
 }
 
-/*activateForm();
-*/
+activateForm();
