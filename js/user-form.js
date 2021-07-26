@@ -8,22 +8,12 @@ const MIN_NAME_LENGTH = 30;
 const MAX_NAME_LENGTH = 100;
 const MIN_PRICE_LENGTH = 0;
 const MAX_PRICE_LENGTH = 7;
+const TIME_12 = '12:00';
+const TIME_13 = '13:00';
+const TIME_14 = '14:00';
+
 
 const userNameInput = document.querySelector('#title');
-
-
-
-/*userNameInput.addEventListener('invalid', () => {
-	if  (userNameInput.validity.tooShort) {
-		userNameInput.setCustomValidity('Заголовок должен состоять минимум из 30-ти символов');
-	}else if (userNameInput.validity.tooLong){
-		userNameInput.setCustomValidity('Заголовок не должен первышать 100 символов');
-	}else if (userNameInput.validity.valueMissing){
-		userNameInput.setCustomValidity('Обязательное поле');
-	} else {
-		userNameInput.setCustomValidity('');
-	}
-});*/
 
 userNameInput.addEventListener('input', () => {
   const valueLength = userNameInput.value.length;
@@ -86,3 +76,62 @@ userSetMinPrice(userTypeInput.value);
 userTypeInput.addEventListener('change', (evt) => {
   userSetMinPrice(evt.target.value);
 });
+
+//Время заезда и  время выезда
+
+const userTime = document.querySelector('#timein');
+const userTimeOut = document.querySelector('#timeout');
+
+const userTimeIn = (timein) => {
+
+  if (timein === '12:00') {
+    userTimeOut.value = TIME_13;
+    userTimeOut.min = TIME_13;
+  }else if (timein === '13:00') {
+    userTimeOut.value = TIME_14;
+    userTimeOut.min = TIME_14;
+  }else if (timein === '14:00') {
+    userTimeOut.value = TIME_12;
+    userTimeOut.min = TIME_12;
+  }
+};
+
+userTimeIn(userTime.value);
+userTime.addEventListener('change', (evt) => {
+  userTimeIn(evt.target.value);
+});
+
+
+// Количество кмнат синхронизировано с полем Количество мест
+
+const userRoom = document.querySelector('#room_number');
+const userCapacity = document.querySelector('#capacity');
+
+const userRoomNumber = (room) => {
+  userCapacity.querySelectorAll('option').forEach((option) => {
+    const value = Number(option.value);
+
+    if (room === 100) {
+      option.disabled = value !== 0;
+    } else {
+      // если выбрано 1, 2 или 3 комнаты
+      if (value === 0) {
+        option.disabled = true;
+      } else {
+        option.disabled = value > room;
+      }
+    }
+  });
+
+  if (room === 100) {
+    userCapacity.value = 0;
+  } else {
+    userCapacity.value = userCapacity.querySelectorAll('option:not(:disabled)')[0].value;
+  }
+};
+
+userRoom.addEventListener('change', () => {
+  userRoomNumber(Number(userRoom.value));
+});
+
+userRoomNumber(Number(userRoom.value));
