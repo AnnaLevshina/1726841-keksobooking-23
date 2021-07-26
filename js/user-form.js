@@ -84,13 +84,13 @@ const userTimeOut = document.querySelector('#timeout');
 
 const userTimeIn = (timein) => {
 
-  if (timein === '12:00') {
+  if (timein === TIME_12) {
     userTimeOut.value = TIME_13;
     userTimeOut.min = TIME_13;
-  }else if (timein === '13:00') {
+  }else if (timein === TIME_13) {
     userTimeOut.value = TIME_14;
     userTimeOut.min = TIME_14;
-  }else if (timein === '14:00') {
+  }else if (timein === TIME_14) {
     userTimeOut.value = TIME_12;
     userTimeOut.min = TIME_12;
   }
