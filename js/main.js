@@ -1,8 +1,8 @@
 import './util.js';
-import './generating-element-markup.js';
+/*import './generating-element-markup.js';*/
 import './inactive-state.js';
 import './user-form.js';
-
+import './leaflet.js';
 
 /*function getRandInt(minNumber, maxNumber) {
   if(minNumber > maxNumber || maxNumber === minNumber || minNumber < 0 || maxNumber < 0) {
