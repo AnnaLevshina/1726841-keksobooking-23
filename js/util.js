@@ -48,5 +48,9 @@ const generateHotel = () => ({
 const similarHotels = new Array(SIMILAR_HOTELS_COUNT).fill(null).map(() => generateHotel());
 
 /*console.log(similarHotels);*/
+const isEscEvent = (evt) => {
+  return evt.key === 'Escape' || evt.key === 'Esc';
+};
 
-export {similarHotels};
+
+export {similarHotels, isEscEvent};

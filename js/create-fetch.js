@@ -1,4 +1,4 @@
-const form = document.querySelector('.ad-form');
+/*const form = document.querySelector('.ad-form');
 
 form.addEventListener('submit', (evt) => {
   evt.preventDefault();
@@ -14,7 +14,8 @@ form.addEventListener('submit', (evt) => {
       if (res.ok) {
         return res.json();
       } else {
-        console.log('Error')
+        console.log('Error');
       }
     });
 });
+*/

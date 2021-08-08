@@ -1,3 +1,5 @@
+import {marker} from './map.js';
+import {showSuccessMessage} from './show-success-error.js'
 //Заголовок объявления
 const MIN_PRICE_BUNGALOW = 0;
 const MIN_PRICE_FLAT = 1000;
@@ -135,3 +137,40 @@ userRoom.addEventListener('change', () => {
 });
 
 userRoomNumber(Number(userRoom.value));
+
+//oтменял действие формы по умолчаниюи и отправлял данные формы посредством fetch на сервер.
+
+const form = document.querySelector('.ad-form');
+const address = document.querySelector('#address');
+form.addEventListener('submit', (evt) => {
+  evt.preventDefault();
+  fetch(
+    'https://23.javascript.pages.academy/keksobooking',
+    {
+      method: 'POST',
+      credentials: 'same-origin',
+      body: new FormData(form),
+    },
+  )
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+        form.reset();
+        address.setAttribute('value', '');
+        marker.setLatLng([35.6895, 139.692,]);
+        showSuccessMessage();
+      } else {
+        console.log('Error');
+        showErrorMessage();
+      }
+    });
+});
+
+const buttonResert = document.querySelector('.ad-form__reset');
+const inputAddress = document.querySelector('#address');
+
+const resetAddress = () => {
+   inputAddress.value = '';
+};
+
+buttonResert.addEventListener('click', () => resetAddress());
