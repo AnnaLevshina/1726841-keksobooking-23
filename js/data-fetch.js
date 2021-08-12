@@ -22,8 +22,8 @@ const getData = () => new Promise(
     }
   });
 
-  document.addEventListener('click', () => {
-    getData().then(console.log)
-  });
-export {getData};
+document.addEventListener('click', () => {
+  getData().then(console.log);
+});
+export {getData, data};
 

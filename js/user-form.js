@@ -1,5 +1,5 @@
 import {marker} from './map.js';
-import {showSuccessMessage} from './show-success-error.js'
+import {showSuccessMessage} from './show-success-error.js';
 //Заголовок объявления
 const MIN_PRICE_BUNGALOW = 0;
 const MIN_PRICE_FLAT = 1000;
@@ -140,7 +140,7 @@ userRoomNumber(Number(userRoom.value));
 
 //oтменял действие формы по умолчаниюи и отправлял данные формы посредством fetch на сервер.
 
-const form = document.querySelector('.ad-form');
+/*const form = document.querySelector('.ad-form');
 const address = document.querySelector('#address');
 form.addEventListener('submit', (evt) => {
   evt.preventDefault();
@@ -157,7 +157,7 @@ form.addEventListener('submit', (evt) => {
         return res.json();
         form.reset();
         address.setAttribute('value', '');
-        marker.setLatLng([35.6895, 139.692,]);
+        marker.setLatLng([35.6895, 139.692]);
         showSuccessMessage();
       } else {
         console.log('Error');
@@ -166,11 +166,53 @@ form.addEventListener('submit', (evt) => {
     });
 });
 
-const buttonResert = document.querySelector('.ad-form__reset');
+
 const inputAddress = document.querySelector('#address');
 
 const resetAddress = () => {
-   inputAddress.value = '';
+  inputAddress.value = '';
 };
+*/
+
+//oтменял действие формы по умолчаниюи и отправлял данные формы посредством fetch на сервер.
+const form = document.querySelector('.ad-form');
+const buttonResert = document.querySelector('.ad-form__reset');
+const INITIAL_COORDS = [35.6895, 139.692];
+
+form.addEventListener('submit', (evt) => {
+  evt.preventDefault();
+  fetch(
+    'https://23.javascript.pages.academy/keksobooking',
+    {
+      method: 'POST',
+      credentials: 'same-origin',
+      body: new FormData(form),
+    },
+  )
+    .then((res) => {
+      if (res.ok) {
+        form.reset();
+
+        showSuccessMessage();
+      } else {
+        console.log('Error');
+        showErrorMessage();
+      }
+    });
+});
+
+const inputAddress = document.querySelector('#address');
+
+const resetAddress = () => {
+  inputAddress.value = INITIAL_COORDS.join(', ');
+  marker.setLatLng(INITIAL_COORDS);
+};
+
+form.addEventListener('reset', () => {
+  // небольшой хак c setTimeout, что бы поле не очистилось, а подставилось значение в поле адреса
+  setTimeout(() => {
+    resetAddress();
+  }, 1);
+});
 
 buttonResert.addEventListener('click', () => resetAddress());

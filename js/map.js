@@ -99,23 +99,23 @@ getData().then((data) => {
     const { offer, location, author } = hotel;
 
     const icon = L.icon({
-    iconUrl: 'https://assets.htmlacademy.ru/content/intensive/javascript-1/demo/interactive-map/pin.svg',
-    iconSize: [40, 40],
-    iconAnchor: [20, 40],
+      iconUrl: 'https://assets.htmlacademy.ru/content/intensive/javascript-1/demo/interactive-map/pin.svg',
+      iconSize: [40, 40],
+      iconAnchor: [20, 40],
+    });
+
+    const marker = L.marker(
+      {
+        lat: location.lat,
+        lng: location.lng,
+      },
+      {
+        icon,
+      },
+    );
+
+    marker.addTo(map).bindPopup(renderCard(hotel));
   });
 
-  const marker = L.marker(
-    {
-      lat: location.lat,
-      lng: location.lng,
-    },
-    {
-      icon,
-    },
-  );
-
-  marker.addTo(map).bindPopup(renderCard(hotel))
-})
-
-  });
+});
 export {marker};

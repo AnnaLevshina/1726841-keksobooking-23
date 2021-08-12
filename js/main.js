@@ -7,4 +7,4 @@ import './data-fetch.js';
 /*import './cerate-fetch.js';
 */
 import './show-success-error.js';
-
+import './filtr.js';
